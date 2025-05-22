@@ -22,6 +22,37 @@
   "disable_keep_alives" : false,
   "disable_rest" : false,
   "echo_endpoint" : false,
+  "endpoints" : [ {
+    "backend" : [ {
+      "allow" : [ ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "responseGroup",
+      "host" : [ "stage-data-lkgc.apiwiz.io" ],
+      "mapping" : {
+        "key" : "renamedKey"
+      },
+      "method" : "GET",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : false,
+      "extra_config" : { },
+      "input_headers" : [ "*" ],
+      "input_query_strings" : [ "*" ],
+      "is_collection" : false,
+      "sd_scheme" : "http",
+      "url_pattern" : "/v1/krakend/local"
+    } ],
+    "cache_ttl" : "0ms",
+    "concurrent_calls" : 1,
+    "endpoint" : "/v1/key-value",
+    "extra_config" : { },
+    "input_headers" : [ "*" ],
+    "input_query_strings" : [ "*" ],
+    "method" : "GET",
+    "output_encoding" : "json",
+    "timeout" : "2s"
+  } ],
   "host" : [ "stage-data-lkgc.apiwiz.io" ],
   "listen_ip" : "",
   "max_header_bytes" : 0,
