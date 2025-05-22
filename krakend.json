@@ -22,6 +22,7 @@
   "disable_keep_alives" : false,
   "disable_rest" : false,
   "echo_endpoint" : false,
+  "host" : [ "stage-data-lkgc.apiwiz.io" ],
   "listen_ip" : "",
   "max_header_bytes" : 0,
   "max_idle_connections" : 0,
