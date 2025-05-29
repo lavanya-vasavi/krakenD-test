@@ -6,7 +6,42 @@
   "disable_keep_alives" : false,
   "disable_rest" : false,
   "echo_endpoint" : false,
-  "endpoints" : [ ],
+  "endpoints" : [ {
+    "backend" : [ {
+      "allow" : [ ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "backend1",
+      "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
+      "mapping" : {
+        "" : ""
+      },
+      "method" : "GET",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : false,
+      "extra_config" : { },
+      "input_headers" : [ ],
+      "input_query_strings" : [ ],
+      "is_collection" : false,
+      "sd_scheme" : "https",
+      "url_pattern" : "/v1/krakend/local1"
+    } ],
+    "cache_ttl" : "0ms",
+    "concurrent_calls" : 1,
+    "endpoint" : "/validateSchema",
+    "extra_config" : {
+      "auth/basic" : {
+        "users" : { },
+        "htpasswd_path" : "/etc/krakend/.htpasswd"
+      }
+    },
+    "input_headers" : [ ],
+    "input_query_strings" : [ ],
+    "method" : "GET",
+    "output_encoding" : "json",
+    "timeout" : "10s"
+  } ],
   "extra_config" : {
     "auth/api-keys" : {
       "identifier" : "X-API-Key",
