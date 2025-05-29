@@ -45,6 +45,22 @@
     "output_encoding" : "json",
     "timeout" : "10s"
   } ],
+  "extra_config" : {
+    "auth/api-keys" : {
+      "identifier" : "X-API-Key",
+      "salt" : "",
+      "strategy" : "header",
+      "propagate_role" : "X-Krakend-Role",
+      "hash" : "plain",
+      "keys" : [ {
+        "key" : "admin-api-key-123",
+        "roles" : [ "admin", "" ]
+      }, {
+        "key" : "user-api-key-456",
+        "roles" : [ "user", "" ]
+      } ]
+    }
+  },
   "listen_ip" : "0.0.0.0",
   "max_header_bytes" : 0,
   "max_idle_connections" : 0,
