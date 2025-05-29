@@ -43,10 +43,6 @@
     "timeout" : "10s"
   } ],
   "extra_config" : {
-    "auth/basic" : {
-      "users" : { },
-      "htpasswd_path" : ""
-    },
     "auth/api-keys" : {
       "identifier" : "X-API-Key",
       "salt" : "",
