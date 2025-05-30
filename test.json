@@ -41,6 +41,41 @@
     "method" : "GET",
     "output_encoding" : "json",
     "timeout" : "10s"
+  }, {
+    "backend" : [ {
+      "allow" : [ ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "backend1",
+      "host" : [ "ws://host.docker.internal:8081/" ],
+      "mapping" : {
+        "" : ""
+      },
+      "method" : "GET",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : true,
+      "extra_config" : { },
+      "input_headers" : [ ],
+      "input_query_strings" : [ ],
+      "is_collection" : false,
+      "sd_scheme" : "http",
+      "url_pattern" : "/"
+    } ],
+    "cache_ttl" : "0ms",
+    "concurrent_calls" : 1,
+    "endpoint" : "/ws/{room}",
+    "extra_config" : {
+      "websocket" : {
+        "connect_event" : true,
+        "input_headers" : [ "Authorization" ]
+      }
+    },
+    "input_headers" : [ "*" ],
+    "input_query_strings" : [ "*" ],
+    "method" : "GET",
+    "output_encoding" : "json",
+    "timeout" : "2s"
   } ],
   "extra_config" : {
     "auth/api-keys" : {
