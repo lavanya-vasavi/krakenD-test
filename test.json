@@ -76,6 +76,41 @@
     "method" : "GET",
     "output_encoding" : "json",
     "timeout" : "2s"
+  }, {
+    "backend" : [ {
+      "allow" : [ ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "",
+      "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
+      "mapping" : {
+        "" : ""
+      },
+      "method" : "POST",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : false,
+      "extra_config" : {
+        "modifier/request-body-generator" : {
+          "content_type" : "application/json",
+          "template" : "eyJyb29tIjoie3sucmVxX3BhcmFtcy5yb29tfX0iLCJhdXRoIjoie3sucmVxX2hlYWRlcnMuQXV0aG9yaXphdGlvbn19IiwicXVlcnkiOiJ7ey5yZXFfcXVlcnkucX19In0="
+        }
+      },
+      "input_headers" : [ "Authorization" ],
+      "input_query_strings" : [ "q" ],
+      "is_collection" : false,
+      "sd_scheme" : "http",
+      "url_pattern" : "/v1/krakend/local1"
+    } ],
+    "cache_ttl" : "0ms",
+    "concurrent_calls" : 1,
+    "endpoint" : "/submit/{room}",
+    "extra_config" : { },
+    "input_headers" : [ "Authorization" ],
+    "input_query_strings" : [ ],
+    "method" : "POST",
+    "output_encoding" : "json",
+    "timeout" : "2s"
   } ],
   "extra_config" : { },
   "listen_ip" : "0.0.0.0",
