@@ -112,7 +112,17 @@
     "output_encoding" : "json",
     "timeout" : "2s"
   } ],
-  "extra_config" : { },
+  "extra_config" : {
+    "auth/api-keys" : {
+      "identifier" : "Authorization",
+      "strategy" : "header",
+      "hash" : "plain",
+      "keys" : [ {
+        "key" : "key1",
+        "roles" : [ "role1", "" ]
+      } ]
+    }
+  },
   "listen_ip" : "0.0.0.0",
   "max_header_bytes" : 0,
   "max_idle_connections" : 0,
