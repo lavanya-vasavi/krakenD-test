@@ -41,6 +41,56 @@
     "method" : "GET",
     "output_encoding" : "json",
     "timeout" : "10s"
+  }, {
+    "backend" : [ {
+      "allow" : [ ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "backend1",
+      "host" : [ "ws://localhost:8081" ],
+      "mapping" : {
+        "" : ""
+      },
+      "method" : "GET",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : true,
+      "extra_config" : { },
+      "input_headers" : [ ],
+      "input_query_strings" : [ ],
+      "is_collection" : false,
+      "sd_scheme" : "http",
+      "url_pattern" : "/"
+    } ],
+    "cache_ttl" : "0ms",
+    "concurrent_calls" : 1,
+    "endpoint" : "/ws/{room}",
+    "extra_config" : {
+      "websocket" : {
+        "write_wait" : { },
+        "enable_direct_communication" : { },
+        "max_retries" : { },
+        "read_buffer_size" : { },
+        "disable_otel_metrics" : { },
+        "pong_wait" : { },
+        "backoff_strategy" : { },
+        "connect_event" : true,
+        "return_error_details" : { },
+        "subprotocols" : { },
+        "timeout" : { },
+        "write_buffer_size" : { },
+        "ping_period" : { },
+        "max_message_size" : { },
+        "input_headers" : [ "Authorization" ],
+        "message_buffer_size" : { },
+        "disconnect_event" : { }
+      }
+    },
+    "input_headers" : [ "*" ],
+    "input_query_strings" : [ "*" ],
+    "method" : "GET",
+    "output_encoding" : "json",
+    "timeout" : "2s"
   } ],
   "extra_config" : {
     "auth/api-keys" : {
