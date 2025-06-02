@@ -190,7 +190,9 @@
     "output_encoding" : "json",
     "timeout" : "2s"
   } ],
-  "extra_config" : { },
+  "extra_config" : {
+    "auth/basic" : { }
+  },
   "listen_ip" : "0.0.0.0",
   "max_header_bytes" : 0,
   "max_idle_connections" : 0,
