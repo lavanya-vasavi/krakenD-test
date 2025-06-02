@@ -191,7 +191,11 @@
     "timeout" : "2s"
   } ],
   "extra_config" : {
-    "auth/basic" : { }
+    "auth/basic" : {
+      "users" : {
+        "key1" : "value1"
+      }
+    }
   },
   "listen_ip" : "0.0.0.0",
   "max_header_bytes" : 0,
