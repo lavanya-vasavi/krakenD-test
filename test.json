@@ -95,13 +95,7 @@
     "output_encoding" : "json",
     "timeout" : "2s"
   } ],
-  "extra_config" : {
-    "auth/basic" : {
-      "users" : {
-        "key1" : "value1"
-      }
-    }
-  },
+  "extra_config" : { },
   "listen_ip" : "0.0.0.0",
   "max_header_bytes" : 0,
   "max_idle_connections" : 0,
