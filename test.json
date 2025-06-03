@@ -11,113 +11,8 @@
       "allow" : [ ],
       "deny" : [ ],
       "backendEncoding" : "json",
-      "group" : "backend1",
-      "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
-      "mapping" : {
-        "" : ""
-      },
-      "method" : "GET",
-      "sd" : "static",
-      "target" : "",
-      "disable_host_sanitize" : false,
-      "extra_config" : { },
-      "input_headers" : [ ],
-      "input_query_strings" : [ ],
-      "is_collection" : false,
-      "sd_scheme" : "https",
-      "url_pattern" : "/v1/krakend/local1"
-    } ],
-    "cache_ttl" : "0ms",
-    "concurrent_calls" : 1,
-    "endpoint" : "/validateSchema",
-    "extra_config" : {
-      "auth/basic" : {
-        "users" : { },
-        "htpasswd_path" : "/etc/krakend/.htpasswd"
-      }
-    },
-    "input_headers" : [ ],
-    "input_query_strings" : [ ],
-    "method" : "GET",
-    "output_encoding" : "json",
-    "timeout" : "10s"
-  }, {
-    "backend" : [ {
-      "allow" : [ ],
-      "deny" : [ ],
-      "backendEncoding" : "json",
-      "group" : "backend1",
-      "host" : [ "ws://host.docker.internal:8081/" ],
-      "mapping" : {
-        "" : ""
-      },
-      "method" : "GET",
-      "sd" : "static",
-      "target" : "",
-      "disable_host_sanitize" : true,
-      "extra_config" : { },
-      "input_headers" : [ ],
-      "input_query_strings" : [ ],
-      "is_collection" : false,
-      "sd_scheme" : "http",
-      "url_pattern" : "/"
-    } ],
-    "cache_ttl" : "0ms",
-    "concurrent_calls" : 1,
-    "endpoint" : "/ws/{room}",
-    "extra_config" : {
-      "websocket" : {
-        "connect_event" : true,
-        "input_headers" : [ "Authorization" ]
-      }
-    },
-    "input_headers" : [ "*" ],
-    "input_query_strings" : [ "*" ],
-    "method" : "GET",
-    "output_encoding" : "json",
-    "timeout" : "2s"
-  }, {
-    "backend" : [ {
-      "allow" : [ ],
-      "deny" : [ ],
-      "backendEncoding" : "no-op",
       "group" : "",
-      "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
-      "mapping" : {
-        "" : ""
-      },
-      "method" : "POST",
-      "sd" : "static",
-      "target" : "",
-      "disable_host_sanitize" : false,
-      "extra_config" : {
-        "modifier/request-body-generator" : {
-          "content_type" : "application/json",
-          "template" : "eyJyb29tIjoie3sucmVxX3BhcmFtcy5yb29tfX0iLCJhdXRoIjoie3sucmVxX2hlYWRlcnMuQXV0aG9yaXphdGlvbn19IiwicXVlcnkiOiJ7ey5yZXFfcXVlcnkucX19In0="
-        }
-      },
-      "input_headers" : [ ],
-      "input_query_strings" : [ ],
-      "is_collection" : false,
-      "sd_scheme" : "http",
-      "url_pattern" : "/v1/krakend/local1"
-    } ],
-    "cache_ttl" : "0ms",
-    "concurrent_calls" : 1,
-    "endpoint" : "/submit/{room}",
-    "extra_config" : { },
-    "input_headers" : [ "Authorization" ],
-    "input_query_strings" : [ "q" ],
-    "method" : "POST",
-    "output_encoding" : "json",
-    "timeout" : "2s"
-  }, {
-    "backend" : [ {
-      "allow" : [ ],
-      "deny" : [ ],
-      "backendEncoding" : "json",
-      "group" : "",
-      "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
+      "host" : [ "http://httpbin.org" ],
       "mapping" : {
         "" : ""
       },
@@ -126,26 +21,33 @@
       "target" : "",
       "disable_host_sanitize" : false,
       "extra_config" : {
-        "validation/response-json-schema" : {
-          "error" : {
-            "body" : "We couldn't process you request, try again later after some time later,please",
-            "status" : 401
+        "modifier/martian" : {
+          "stash_Modifier" : { },
+          "header_Append" : { },
+          "header_Id" : { },
+          "querystring_Modifier" : { },
+          "url_Modifier" : { },
+          "header_Modifier" : {
+            "name" : "X-Test-Header",
+            "scope" : [ "request" ],
+            "value" : "TestValue"
           },
-          "schema" : {
-            "type" : "object",
-            "required" : [ "user" ]
-          }
+          "cookie_Modifier" : { },
+          "header_Copy" : { },
+          "header_Blacklist" : { },
+          "port_Modifier" : { },
+          "body_Modifier" : { }
         }
       },
       "input_headers" : [ ],
       "input_query_strings" : [ ],
       "is_collection" : false,
       "sd_scheme" : "http",
-      "url_pattern" : "/v1/krakend/local1"
+      "url_pattern" : "/get"
     } ],
     "cache_ttl" : "0ms",
     "concurrent_calls" : 1,
-    "endpoint" : "/testResponse",
+    "endpoint" : "/testMartianModifers",
     "extra_config" : { },
     "input_headers" : [ ],
     "input_query_strings" : [ ],
@@ -154,11 +56,11 @@
     "timeout" : "2s"
   }, {
     "backend" : [ {
-      "allow" : [ ],
+      "allow" : [ "testInteger", "testArr" ],
       "deny" : [ ],
       "backendEncoding" : "json",
-      "group" : "backend1",
-      "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
+      "group" : "",
+      "host" : [ "https://apiwiz-ui-team-xiyp.apiwiz.io" ],
       "mapping" : {
         "" : ""
       },
@@ -166,26 +68,19 @@
       "sd" : "static",
       "target" : "",
       "disable_host_sanitize" : false,
-      "extra_config" : {
-        "modifier/response-body-generator" : {
-          "template" : false,
-          "path" : "/etc/krakend/custom_template.tmpl",
-          "debug" : true,
-          "content_type" : "application/json"
-        }
-      },
-      "input_headers" : [ ],
-      "input_query_strings" : [ ],
+      "extra_config" : { },
+      "input_headers" : [ "x-test-token" ],
+      "input_query_strings" : [ "userId", "env" ],
       "is_collection" : false,
       "sd_scheme" : "http",
       "url_pattern" : "/v1/krakend/local1"
     } ],
     "cache_ttl" : "0ms",
     "concurrent_calls" : 1,
-    "endpoint" : "/test",
+    "endpoint" : "/testHeadersAndQueryStrings",
     "extra_config" : { },
-    "input_headers" : [ ],
-    "input_query_strings" : [ ],
+    "input_headers" : [ "x-test-token" ],
+    "input_query_strings" : [ "userId", "env" ],
     "method" : "GET",
     "output_encoding" : "json",
     "timeout" : "2s"
@@ -194,74 +89,45 @@
       "allow" : [ ],
       "deny" : [ ],
       "backendEncoding" : "json",
-      "group" : "backend1",
-      "host" : [ "kafka://" ],
-      "mapping" : {
-        "" : ""
-      },
-      "method" : "POST",
-      "sd" : "static",
-      "target" : "",
-      "disable_host_sanitize" : true,
-      "extra_config" : {
-        "backend/pubsub/publisher" : {
-          "topic_url" : "sample_data_users"
-        }
-      },
-      "input_headers" : [ ],
-      "input_query_strings" : [ ],
-      "is_collection" : false,
-      "sd_scheme" : "http",
-      "url_pattern" : "/ignored"
-    } ],
-    "cache_ttl" : "0ms",
-    "concurrent_calls" : 1,
-    "endpoint" : "/publish",
-    "extra_config" : { },
-    "input_headers" : [ ],
-    "input_query_strings" : [ ],
-    "method" : "POST",
-    "output_encoding" : "no-op",
-    "timeout" : "2s"
-  }, {
-    "backend" : [ {
-      "allow" : [ ],
-      "deny" : [ ],
-      "backendEncoding" : "json",
-      "group" : "backend1",
-      "host" : [ "kafka://" ],
+      "group" : "",
+      "host" : [ ],
       "mapping" : {
         "" : ""
       },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
-      "disable_host_sanitize" : true,
-      "extra_config" : {
-        "backend/pubsub/subscriber" : {
-          "subscription_url" : "krakend-testing?topic=sample_data_users"
-        }
-      },
+      "disable_host_sanitize" : false,
+      "extra_config" : { },
       "input_headers" : [ ],
       "input_query_strings" : [ ],
-      "is_collection" : false,
+      "is_collection" : true,
       "sd_scheme" : "http",
-      "url_pattern" : "/ignored"
+      "url_pattern" : "check"
+    }, {
+      "allow" : [ ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "",
+      "host" : [ ],
+      "mapping" : {
+        "" : ""
+      },
+      "method" : "GET",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : false,
+      "extra_config" : { },
+      "input_headers" : [ ],
+      "input_query_strings" : [ ],
+      "is_collection" : true,
+      "sd_scheme" : "http",
+      "url_pattern" : "check"
     } ],
     "cache_ttl" : "0ms",
     "concurrent_calls" : 1,
-    "endpoint" : "/consumer",
-    "extra_config" : {
-      "validation/cel" : {
-        "" : [ {
-          "check_expr" : "req_Method = 'POST'"
-        }, {
-          "check_expr" : "req_Method = 'POST'"
-        }, {
-          "check_expr" : "req_Method = 'POST'"
-        } ]
-      }
-    },
+    "endpoint" : "/check",
+    "extra_config" : { },
     "input_headers" : [ ],
     "input_query_strings" : [ ],
     "method" : "GET",
