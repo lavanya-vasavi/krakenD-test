@@ -267,36 +267,6 @@
     "method" : "GET",
     "output_encoding" : "json",
     "timeout" : "2s"
-  }, {
-    "backend" : [ {
-      "allow" : [ ],
-      "deny" : [ ],
-      "backendEncoding" : "json",
-      "group" : "",
-      "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
-      "mapping" : {
-        "" : ""
-      },
-      "method" : "GET",
-      "sd" : "static",
-      "target" : "",
-      "disable_host_sanitize" : false,
-      "extra_config" : { },
-      "input_headers" : [ "Cookie" ],
-      "input_query_strings" : [ "userId" ],
-      "is_collection" : false,
-      "sd_scheme" : "http",
-      "url_pattern" : "/v1/krakend/local1"
-    } ],
-    "cache_ttl" : "0ms",
-    "concurrent_calls" : 1,
-    "endpoint" : "/testHeadersAndString",
-    "extra_config" : { },
-    "input_headers" : [ "Cookie" ],
-    "input_query_strings" : [ "userId" ],
-    "method" : "GET",
-    "output_encoding" : "json",
-    "timeout" : "2s"
   } ],
   "extra_config" : { },
   "listen_ip" : "0.0.0.0",
