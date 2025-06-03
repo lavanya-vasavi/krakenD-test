@@ -84,55 +84,6 @@
     "method" : "GET",
     "output_encoding" : "json",
     "timeout" : "2s"
-  }, {
-    "backend" : [ {
-      "allow" : [ ],
-      "deny" : [ ],
-      "backendEncoding" : "json",
-      "group" : "",
-      "host" : [ ],
-      "mapping" : {
-        "" : ""
-      },
-      "method" : "GET",
-      "sd" : "static",
-      "target" : "",
-      "disable_host_sanitize" : false,
-      "extra_config" : { },
-      "input_headers" : [ ],
-      "input_query_strings" : [ ],
-      "is_collection" : true,
-      "sd_scheme" : "http",
-      "url_pattern" : "check"
-    }, {
-      "allow" : [ ],
-      "deny" : [ ],
-      "backendEncoding" : "json",
-      "group" : "",
-      "host" : [ ],
-      "mapping" : {
-        "" : ""
-      },
-      "method" : "GET",
-      "sd" : "static",
-      "target" : "",
-      "disable_host_sanitize" : false,
-      "extra_config" : { },
-      "input_headers" : [ ],
-      "input_query_strings" : [ ],
-      "is_collection" : true,
-      "sd_scheme" : "http",
-      "url_pattern" : "check"
-    } ],
-    "cache_ttl" : "0ms",
-    "concurrent_calls" : 1,
-    "endpoint" : "/check",
-    "extra_config" : { },
-    "input_headers" : [ ],
-    "input_query_strings" : [ ],
-    "method" : "GET",
-    "output_encoding" : "json",
-    "timeout" : "2s"
   } ],
   "extra_config" : { },
   "listen_ip" : "0.0.0.0",
