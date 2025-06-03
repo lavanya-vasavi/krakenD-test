@@ -54,6 +54,36 @@
     "method" : "GET",
     "output_encoding" : "json",
     "timeout" : "2s"
+  }, {
+    "backend" : [ {
+      "allow" : [ "testInteger", "testArr" ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "",
+      "host" : [ "https://apiwiz-ui-team-xiyp.apiwiz.io" ],
+      "mapping" : {
+        "" : ""
+      },
+      "method" : "GET",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : false,
+      "extra_config" : { },
+      "input_headers" : [ "x-test-token" ],
+      "input_query_strings" : [ "userId", "env" ],
+      "is_collection" : false,
+      "sd_scheme" : "http",
+      "url_pattern" : "/v1/krakend/local1"
+    } ],
+    "cache_ttl" : "0ms",
+    "concurrent_calls" : 1,
+    "endpoint" : "/testHeadersAndQueryStrings",
+    "extra_config" : { },
+    "input_headers" : [ "x-test-token" ],
+    "input_query_strings" : [ "userId", "env" ],
+    "method" : "GET",
+    "output_encoding" : "json",
+    "timeout" : "2s"
   } ],
   "extra_config" : { },
   "listen_ip" : "0.0.0.0",
