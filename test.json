@@ -361,7 +361,7 @@
       "browser_xss_filter" : true,
       "frame_deny" : false,
       "content_security_policy" : "default-src 'self';",
-      "ssl_redirect" : false,
+      "ssl_redirect" : true,
       "sts_include_subdomains" : true,
       "sts_preload" : false,
       "ssl_proxy_headers" : {
@@ -370,9 +370,9 @@
       "ssl_host" : "localhost",
       "content_type_nosniff" : true,
       "allowed_hosts_are_regex" : false,
-      "allowed_hosts" : [ "localhost:8080" ],
+      "allowed_hosts" : [ "localhost:8081" ],
       "host_proxy_headers" : [ "X-Forwarded-Host" ],
-      "force_sts_header" : false,
+      "force_sts_header" : true,
       "is_development" : false
     }
   },
