@@ -429,28 +429,7 @@
     "output_encoding" : "json",
     "timeout" : "2s"
   } ],
-  "extra_config" : {
-    "security/policies" : {
-      "custom_frame_options_value" : "ALLOW-FROM https://example.com",
-      "referrer_policy" : "same-origin",
-      "browser_xss_filter" : true,
-      "frame_deny" : false,
-      "content_security_policy" : "default-src 'self';",
-      "ssl_redirect" : true,
-      "sts_include_subdomains" : true,
-      "sts_preload" : false,
-      "ssl_proxy_headers" : {
-        "X-Forwarded-Proto" : "https"
-      },
-      "ssl_host" : "localhost",
-      "content_type_nosniff" : true,
-      "allowed_hosts_are_regex" : false,
-      "allowed_hosts" : [ "localhost:8081" ],
-      "host_proxy_headers" : [ "X-Forwarded-Host" ],
-      "force_sts_header" : true,
-      "is_development" : false
-    }
-  },
+  "extra_config" : { },
   "listen_ip" : "0.0.0.0",
   "max_header_bytes" : 0,
   "max_idle_connections" : 0,
