@@ -392,6 +392,42 @@
     "method" : "GET",
     "output_encoding" : "json",
     "timeout" : "2s"
+  }, {
+    "backend" : [ {
+      "allow" : [ ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "",
+      "host" : [ "https://postman-echo.com" ],
+      "mapping" : {
+        "" : ""
+      },
+      "method" : "GET",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : false,
+      "extra_config" : {
+        "backend/lambda" : {
+          "max_retries" : 1,
+          "region" : "ap-south-1",
+          "function_name" : "KrakendTest"
+        }
+      },
+      "input_headers" : [ ],
+      "input_query_strings" : [ ],
+      "is_collection" : false,
+      "sd_scheme" : "https",
+      "url_pattern" : "/get"
+    } ],
+    "cache_ttl" : "0ms",
+    "concurrent_calls" : 1,
+    "endpoint" : "/testAWSLambdaFunction",
+    "extra_config" : { },
+    "input_headers" : [ ],
+    "input_query_strings" : [ ],
+    "method" : "GET",
+    "output_encoding" : "json",
+    "timeout" : "2s"
   } ],
   "extra_config" : {
     "security/policies" : {
