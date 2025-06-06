@@ -13,9 +13,7 @@
       "backendEncoding" : "json",
       "group" : "backend1",
       "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -48,9 +46,7 @@
       "backendEncoding" : "json",
       "group" : "backend1",
       "host" : [ "ws://host.docker.internal:8081/" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -83,9 +79,7 @@
       "backendEncoding" : "no-op",
       "group" : "",
       "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "POST",
       "sd" : "static",
       "target" : "",
@@ -118,9 +112,7 @@
       "backendEncoding" : "json",
       "group" : "",
       "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -159,9 +151,7 @@
       "backendEncoding" : "json",
       "group" : "backend1",
       "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -196,9 +186,7 @@
       "backendEncoding" : "json",
       "group" : "backend1",
       "host" : [ "kafka://" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "POST",
       "sd" : "static",
       "target" : "",
@@ -230,9 +218,7 @@
       "backendEncoding" : "json",
       "group" : "backend1",
       "host" : [ "kafka://" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -252,15 +238,7 @@
     "concurrent_calls" : 1,
     "endpoint" : "/consumer",
     "extra_config" : {
-      "validation/cel" : {
-        "" : [ {
-          "check_expr" : "req_Method = 'POST'"
-        }, {
-          "check_expr" : "req_Method = 'POST'"
-        }, {
-          "check_expr" : "req_Method = 'POST'"
-        } ]
-      }
+      "validation/cel" : { }
     },
     "input_headers" : [ ],
     "input_query_strings" : [ ],
@@ -274,9 +252,7 @@
       "backendEncoding" : "json",
       "group" : "",
       "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -300,9 +276,7 @@
       "backendEncoding" : "json",
       "group" : "backend1",
       "host" : [ "https://stage-data-lkgc.apiwiz.io" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -330,9 +304,7 @@
       "backendEncoding" : "json",
       "group" : "",
       "host" : [ ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -364,9 +336,7 @@
       "backendEncoding" : "json",
       "group" : "",
       "host" : [ ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -399,9 +369,7 @@
       "backendEncoding" : "json",
       "group" : "",
       "host" : [ "https://postman-echo.com" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -435,9 +403,7 @@
       "backendEncoding" : "json",
       "group" : "",
       "host" : [ "https://postman-echo.com" ],
-      "mapping" : {
-        "" : ""
-      },
+      "mapping" : { },
       "method" : "GET",
       "sd" : "static",
       "target" : "",
@@ -470,6 +436,98 @@
     "cache_ttl" : "0ms",
     "concurrent_calls" : 1,
     "endpoint" : "/testMartian",
+    "extra_config" : { },
+    "input_headers" : [ ],
+    "input_query_strings" : [ ],
+    "method" : "GET",
+    "output_encoding" : "json",
+    "timeout" : "2s"
+  }, {
+    "backend" : [ {
+      "allow" : [ ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "",
+      "host" : [ "https://postman-echo.com" ],
+      "mapping" : { },
+      "method" : "GET",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : false,
+      "extra_config" : {
+        "modifier/martian" : {
+          "cookie.Modifier" : { },
+          "body.Modifier" : { },
+          "header.Id" : { },
+          "stash.Modifier" : { },
+          "header.Copy" : { },
+          "port.Modifier" : { },
+          "header.Modifier" : {
+            "name" : "X-Test-Header",
+            "scope" : [ "request" ],
+            "value" : "TestValue"
+          },
+          "querystring.Modifier" : { },
+          "url.Modifier" : { },
+          "header.Append" : { },
+          "header.Blacklist" : { }
+        }
+      },
+      "input_headers" : [ ],
+      "input_query_strings" : [ ],
+      "is_collection" : false,
+      "sd_scheme" : "http",
+      "url_pattern" : "/get"
+    } ],
+    "cache_ttl" : "0ms",
+    "concurrent_calls" : 1,
+    "endpoint" : "/testMartian",
+    "extra_config" : { },
+    "input_headers" : [ ],
+    "input_query_strings" : [ ],
+    "method" : "GET",
+    "output_encoding" : "json",
+    "timeout" : "2s"
+  }, {
+    "backend" : [ {
+      "allow" : [ ],
+      "deny" : [ ],
+      "backendEncoding" : "json",
+      "group" : "",
+      "host" : [ "http://httpbin.org" ],
+      "mapping" : { },
+      "method" : "GET",
+      "sd" : "static",
+      "target" : "",
+      "disable_host_sanitize" : false,
+      "extra_config" : {
+        "modifier/martian" : {
+          "cookie.Modifier" : { },
+          "body.Modifier" : { },
+          "header.Id" : { },
+          "stash.Modifier" : { },
+          "header.Copy" : { },
+          "port.Modifier" : { },
+          "header.Modifier" : {
+            "name" : "X-Test-Header",
+            "scope" : [ "request" ],
+            "value" : "TestValue"
+          },
+          "querystring.Modifier" : { },
+          "url.Modifier" : { },
+          "header.Append" : { },
+          "header.Blacklist" : { }
+        }
+      },
+      "input_headers" : [ ],
+      "input_query_strings" : [ ],
+      "is_collection" : false,
+      "sd_scheme" : "http",
+      "url_pattern" : "/get"
+    } ],
+    "cache_ttl" : "0ms",
+    "concurrent_calls" : 1,
+    "endpoint" : "/testMartianModifier",
     "extra_config" : { },
     "input_headers" : [ ],
     "input_query_strings" : [ ],
