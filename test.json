@@ -476,54 +476,6 @@
     "method" : "GET",
     "output_encoding" : "json",
     "timeout" : "2s"
-  }, {
-    "backend" : [ {
-      "allow" : [ ],
-      "deny" : [ ],
-      "backendEncoding" : "json",
-      "group" : "",
-      "host" : [ "http://httpbin.org" ],
-      "mapping" : {
-        "" : ""
-      },
-      "method" : "GET",
-      "sd" : "static",
-      "target" : "",
-      "disable_host_sanitize" : false,
-      "extra_config" : {
-        "modifier/martian" : {
-          "cookie.Modifier" : { },
-          "body.Modifier" : { },
-          "header.Id" : { },
-          "stash.Modifier" : { },
-          "header.Copy" : { },
-          "port.Modifier" : { },
-          "header.Modifier" : {
-            "name" : "X-Test-Header",
-            "scope" : [ "request" ],
-            "value" : "TestValue"
-          },
-          "querystring.Modifier" : { },
-          "url.Modifier" : { },
-          "header.Append" : { },
-          "header.Blacklist" : { }
-        }
-      },
-      "input_headers" : [ ],
-      "input_query_strings" : [ ],
-      "is_collection" : false,
-      "sd_scheme" : "http",
-      "url_pattern" : "/get"
-    } ],
-    "cache_ttl" : "0ms",
-    "concurrent_calls" : 1,
-    "endpoint" : "/testMartianModifier",
-    "extra_config" : { },
-    "input_headers" : [ ],
-    "input_query_strings" : [ ],
-    "method" : "GET",
-    "output_encoding" : "json",
-    "timeout" : "2s"
   } ],
   "extra_config" : { },
   "listen_ip" : "0.0.0.0",
